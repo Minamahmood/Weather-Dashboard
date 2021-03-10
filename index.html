@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <div class="container-fluid text-center text-white bg-dark p-3">
+    <div class="container-fluid text-center text-white bg-dark p-3" id="weather">
         <div class="container">
             <h1>Weather Dashboard</h1>
-            <div class="input">
+            <!-- <div class="input">
                 <input type="text" class="inputvalue" placeholder="Enter the city name" />
 
 
@@ -26,64 +26,79 @@
                 <h1 class="name"></h1>
                 <p class="desc"></p>
                 <p class="temp"></p>
-            </div>
+            </div> -->
 
+            <!-- <div class="jumbotron bg-secondary">
+        <!-- <div class="container"> -->
+            <form>
+                <div class="form-group">
+                    <label></label>
+                    <input type="text" class="form-control" id="city" placeholder="Enter the city name" />
 
-
-            <!--five-day-forecast-container-->
-            <div class="row flex-column pt-3" id="five-day-forecast-container">
-                <div class="row no-gutters">
-                    <h3 class="font-weight-bold">5-Day Forecast:</h3>
+                    <button type="submit" class="btn-primary">submit</button>
                 </div>
-                <div class="row no-gutters">
-                    <div class="col-lg mx-1 pb-2">
-                        <div class="card text-white bg-primary" id="day-1">
-                            <div class="card-body">
-                                <h5 class="card-title" id="day-1st"></h5>
-                                <p class="card-text" id="temp-1"></p>
-                                <p class="card-text" id="humidity-1"></p>
-                            </div>
+            </form>
+            <p id="city_name"></p>
+            <p id="city_weather"></p>
+            <p id="city_temp"></p>
+        </div>
+
+
+        <!--five-day-forecast-container-->
+        <div class="row flex-column pt-3" id="five-day-forecast-container">
+            <div class="row no-gutters">
+                <h3 class="font-weight-bold">5-Day Forecast:</h3>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg mx-1 pb-2">
+                    <div class="card text-white bg-primary" id="day-1">
+                        <div class="card-body">
+                            <h5 class="card-title" id="day-1st"></h5>
+                            <p class="card-text" id="temp-1"></p>
+                            <p class="card-text" id="humidity-1"></p>
                         </div>
                     </div>
-                    <div class="col-lg mx-1 pb-2">
-                        <div class="card text-white bg-primary" id="day-2">
-                            <div class="card-body">
-                                <h5 class="card-title" id="day-2nd"></h5>
-                                <p class="card-text" id="temp-2"></p>
-                                <p class="card-text" id="humidity-2"></p>
-                            </div>
+                </div>
+                <div class="col-lg mx-1 pb-2">
+                    <div class="card text-white bg-primary" id="day-2">
+                        <div class="card-body">
+                            <h5 class="card-title" id="day-2nd"></h5>
+                            <p class="card-text" id="temp-2"></p>
+                            <p class="card-text" id="humidity-2"></p>
                         </div>
                     </div>
-                    <div class="col-lg mx-1 pb-2">
-                        <div class="card text-white bg-primary" id="day-3">
-                            <div class="card-body">
-                                <h5 class="card-title" id="day-3rd"></h5>
-                                <p class="card-text" id="temp-3"></p>
-                                <p class="card-text" id="humidity-3"></p>
-                            </div>
+                </div>
+                <div class="col-lg mx-1 pb-2">
+                    <div class="card text-white bg-primary" id="day-3">
+                        <div class="card-body">
+                            <h5 class="card-title" id="day-3rd"></h5>
+                            <p class="card-text" id="temp-3"></p>
+                            <p class="card-text" id="humidity-3"></p>
                         </div>
                     </div>
-                    <div class="col-lg mx-1 pb-2">
-                        <div class="card text-white bg-primary" id="day-4">
-                            <div class="card-body">
-                                <h5 class="card-title" id="day-4th"></h5>
-                                <p class="card-text" id="temp-4"></p>
-                                <p class="card-text" id="humidity-4"></p>
-                            </div>
+                </div>
+                <div class="col-lg mx-1 pb-2">
+                    <div class="card text-white bg-primary" id="day-4">
+                        <div class="card-body">
+                            <h5 class="card-title" id="day-4th"></h5>
+                            <p class="card-text" id="temp-4"></p>
+                            <p class="card-text" id="humidity-4"></p>
                         </div>
                     </div>
-                    <div class="col-lg mx-1 pb-2">
-                        <div class="card text-white bg-primary" id="day-5">
-                            <div class="card-body">
-                                <h5 class="card-title" id="day-5th"></h5>
-                                <p class="card-text" id="temp-5"></p>
-                                <p class="card-text" id="humidity-5"></p>
-                            </div>
+                </div>
+                <div class="col-lg mx-1 pb-2">
+                    <div class="card text-white bg-primary" id="day-5">
+                        <div class="card-body">
+                            <h5 class="card-title" id="day-5th"></h5>
+                            <p class="card-text" id="temp-5"></p>
+                            <p class="card-text" id="humidity-5"></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
     </div>
 

@@ -9,7 +9,7 @@
 body {
     font-family: "Nunito", sans-serif;
 }
-.container {
+#weather {
     background-image: url(https://thedestinyformula.com/wp-content/uploads/2018/08/Sunny-Weather-630x380.jpg);
     background-size: cover;
 }

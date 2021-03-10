@@ -1,27 +1,20 @@
-var button = document.querySelector(".button");
-var inputValue = document.querySelector(".inputValue");
-var name = document.querySelector(".name");
-var desc = document.querySelector(".desc");
-var temp = document.querySelector(".temp");
+(function() {
+    $("#form-submit").submit(function(event) {
+        performSearch(event);
+    });
+});
 
-button.addEventListener("click", function() {
-            fetch(
-                "api.openweathermap.org/data/2.5/forecast?q= " +
-                inputValue.value +
-                "{city name}&appid=39907d575f349b1b0380ef04160f3574"
-            );
-            .then((response) => response.json())
-                .then((data) => {
-                        var nameValue = data['name'];
-                        var tempValue = data['name']['temp'];
-                        var descValue = data['weather']['0']['description'];
+function performSearch(event) {
+    var request;
+    event.preventDefault();
 
-                        name.innerHTML = nameValue;
-                        temp.innerHTML = tempValue;
-                        desc.innerHTML = descValue;
-                    }
-
-
-
-                    .catch((err) => alert("wrong city name!")
-                    });
+    request.ajax({
+        url: "api.openweathermap.org/data/2.5/forecast",
+        type: "GET",
+        data: {
+            q: $("#city").val(),
+            appid: "39907d575f349b1b0380ef04160f3574",
+            units: "metric",
+        },
+    });
+}
