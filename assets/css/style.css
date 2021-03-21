@@ -8,16 +8,22 @@ body {
     font-family: "Nunito", sans-serif;
 }
 
-#weather {
-    background-image: url(https://thedestinyformula.com/wp-content/uploads/2018/08/Sunny-Weather-630x380.jpg);
+#Dashboard {
+    background-image: url(https://lh3.googleusercontent.com/u5TpI6QtIQejHUKl0JekiOJ2GGN9nIeJym_BrVdju0LEzmLBJdmsK8lPAe5rCTWs9Bg);
     background-size: cover;
 }
 
 h1 {
     text-align: center;
     padding: 40px;
-    font-size: 30px;
+    font-size: 70px;
     font-weight: bolder;
+    color: black;
+}
+
+h3 {
+    color: black;
+    font-size: 60px;
 }
 
 .input {
@@ -25,15 +31,16 @@ h1 {
 }
 
 input[type="text"] {
+    width: 500px;
     height: 50px;
-    width: 600px;
-    background: white;
-    font-family: "Nunito", sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 2px;
-    padding: 10px 10px;
-    margin-right: 25px;
+    top: 50%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: rgb(243, 236, 236);
 }
 
 input[type="submit"] {
@@ -49,4 +56,8 @@ input[type="submit"] {
 
 .display {
     text-align: center;
+}
+
+#five-day-forecast-container {
+    display: block;
 }
