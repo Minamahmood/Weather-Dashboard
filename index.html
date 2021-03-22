@@ -22,10 +22,12 @@
 
             <form>
                 <div class="form-group">
-                    <label></label>
+                    <label onload="get()"></label>
+                    <p id="savedText"></p>
+                    <p id="openedText"></p>
                     <input type="text" class="form-control" id="txtCity" placeholder="Enter the city name" />
 
-                    <button type="submit" class="btn-primary" id="btnWeather">serch</button>
+                    <button onclick="save()" type="submit" class="btn-primary" id="btnWeather">serch</button>
 
                 </div>
             </form>
@@ -34,6 +36,9 @@
                 <h1 id="name"></h1>
                 <p id="weather"></p>
                 <p id="temp"></p>
+                <p id="humidity"></p>
+                <p id="wind-speed"></p>
+                <p id="uv-index"></p>
             </div>
         </div>
 

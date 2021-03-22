@@ -7,6 +7,9 @@ const resultOut = document.getElementById("result");
 
 const weather = document.getElementById("weather");
 const temp = document.getElementById("temp");
+const humidity = document.getElementById("humidity");
+const windspeed = document.getElementById("wind-speed");
+const uvindex = document.getElementById("uv-index");
 const dateCont = document.querySelector(".notification");
 
 dateCont.innerHTML = curDate;
@@ -47,22 +50,24 @@ btnWeather.onclick = function(event) {
                     document.getElementById("temp-" + day).textContent =
                         (forecast.list[i].main.temp * (9 / 5) - 459.67).toFixed(0) + "F";
                     document.getElementById("humidity-" + day).textContent =
-                        forecast.list[i].main.humidity;
+                        forecast.list[i].main.humidity + "humidity";
+                    // document.getElementById("weather-" + day).textContent =
+                    //     forecast.list[i].main.weather;
                     day++;
                 }
             }
         });
 
-    //     var storedItem = localStorage.getItem("storedItem");
+    var storedItem = localStorage.getItem("storedItem");
 
-    //     function save() {
-    //         var Item = document.getElementById("txtCity").value;
-    //         localStorage.setItem("storedItem", Item);
-    //         document.getElementById("savedText").textHTML = Item + "SAVED";
-    //     }
+    function save() {
+        var Item = document.getElementById("txtCity").value;
+        localStorage.setItem("storedItem", Item);
+        document.getElementById("savedText").textHTML = Item + "SAVED";
+    }
 
-    //     function git() {
-    //         localStorage.getElementById("storedItem");
-    //         document.getElementById("openedText").innerHTML = storedItem + "opened";
-    //     }
+    function git() {
+        localStorage.getItem("storedItem");
+        document.getElementById("openedText").innerHTML = storedItem + "OPENED";
+    }
 };
