@@ -13,7 +13,8 @@ dateCont.innerHTML = curDate;
 
 btnWeather.onclick = function(event) {
     event.preventDefault();
-
+    document.getElementById("five-day-forecast-container").style.display =
+        "block";
     const city = txtCity.value;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=39907d575f349b1b0380ef04160f3574`;
     const forcastUrl =
@@ -26,7 +27,8 @@ btnWeather.onclick = function(event) {
         .then((json) => {
             const name = document.getElementById("name");
             name.innerHTML = json.name;
-            (temp.innerHTML = json.main.temp * (9 / 5) - 459.67).toFixed(0);
+            temp.innerHTML =
+                Math.round(json.main.temp * (9 / 5) - 459.67).toFixed(0) + "F";
             weather.innerHTML = weather.innerHTML = json.weather[0].main;
         });
 
@@ -42,10 +44,8 @@ btnWeather.onclick = function(event) {
                         "day-" + day + "-h5"
                     ).textContent = forecast.list[i].dt_txt.split(" ")[0];
 
-                    document.getElementById("temp-" + day).textContent = (
-                        forecast.list[i].main.temp * (9 / 5) -
-                        459.67
-                    ).toFixed(0);
+                    document.getElementById("temp-" + day).textContent =
+                        (forecast.list[i].main.temp * (9 / 5) - 459.67).toFixed(0) + "F";
                     document.getElementById("humidity-" + day).textContent =
                         forecast.list[i].main.humidity;
                     day++;
@@ -53,16 +53,16 @@ btnWeather.onclick = function(event) {
             }
         });
 
-    var storedItem = localStorage.getItem("storedItem");
+    //     var storedItem = localStorage.getItem("storedItem");
 
-    function save() {
-        var Item = document.getElementById("txtCity").value;
-        localStorage.setItem("storedItem", Item);
-        document.getElementById("savedText").textHTML = Item + "SAVED";
-    }
+    //     function save() {
+    //         var Item = document.getElementById("txtCity").value;
+    //         localStorage.setItem("storedItem", Item);
+    //         document.getElementById("savedText").textHTML = Item + "SAVED";
+    //     }
 
-    function git() {
-        localStorage.getElementById("storedItem");
-        document.getElementById("openedText").innerHTML = storedItem + "opened";
-    }
+    //     function git() {
+    //         localStorage.getElementById("storedItem");
+    //         document.getElementById("openedText").innerHTML = storedItem + "opened";
+    //     }
 };
