@@ -4,7 +4,9 @@ console.log(curDate);
 const btnWeather = document.getElementById("btnWeather");
 const txtCity = document.getElementById("txtCity");
 const resultOut = document.getElementById("result");
-
+let pervSearch = localStorage.getItem("txtCity");
+pervSearch = pervSearch ? JSON.parse(pervSearch) : [];
+console.log(pervSearch);
 const weather = document.getElementById("weather");
 const temp = document.getElementById("temp");
 const humidity = document.getElementById("humidity");
@@ -16,6 +18,8 @@ dateCont.innerHTML = curDate;
 
 btnWeather.onclick = function(event) {
     event.preventDefault();
+    localStorage.clear();
+
     document.getElementById("five-day-forecast-container").style.display =
         "block";
     const city = txtCity.value;
@@ -24,7 +28,7 @@ btnWeather.onclick = function(event) {
         "https://api.openweathermap.org/data/2.5/forecast?q=" +
         city +
         "&appid=39907d575f349b1b0380ef04160f3574";
-
+    save();
     fetch(url)
         .then((response) => response.json())
         .then((json) => {
