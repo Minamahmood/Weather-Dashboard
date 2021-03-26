@@ -11,7 +11,7 @@ const weather = document.getElementById("weather");
 const temp = document.getElementById("temp");
 const humidity = document.getElementById("humidity");
 const windSpeed = document.getElementById("windSpeed");
-const uvIndex = document.getElementById("uvIndex");
+
 const dateCont = document.querySelector(".notification");
 
 dateCont.innerHTML = curDate;
@@ -39,8 +39,7 @@ btnWeather.onclick = function(event) {
                 Math.round(json.main.temp * (9 / 5) - 459.67).toFixed(0) + "F";
             weather.innerHTML = weather.innerHTML = json.weather[0].main;
             humidity.innerHTML = json.main.humidity + "humidity";
-            // windspeed.innerHTML = json.main.windSpeed + "windSpeed";
-            // uvIndex.innerHTML = json.main.uvIndex + "uvIndex";
+            windSpeed.innerHTML = json.wind.speed + "windSpeed";
         });
 
     fetch(forcastUrl)
