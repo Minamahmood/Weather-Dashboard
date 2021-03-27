@@ -1,6 +1,6 @@
 # WEATHER-DASHBOARD
 
-![example](https://user-images.githubusercontent.com/56496370/110220050-f9145780-7e77-11eb-8665-9041fd580904.gif)
+![example](assets/images/example.gif)
 
 ## Description
 
@@ -14,6 +14,7 @@ when a user types city name in the search, the temperature, wind speed, and humi
 - [Testing](#testing)
 - [Credits](#credits)
 - [Deployed Link](#Deployed)
+- [Repo link](#Repo)
 - [License](#license)
 
 ## Installation
@@ -40,7 +41,11 @@ Email: minamahmood83@gmail.com
 
 ## Deployed
 
-https://minamahmood.github.io/Taskmaster/
+https://minamahmood.github.io/Weather-Dashboard/
+
+## Repo
+
+https://github.com/Minamahmood/Weather-Dashboard
 
 ## License
 
