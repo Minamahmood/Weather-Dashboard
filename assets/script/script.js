@@ -36,10 +36,10 @@ btnWeather.onclick = function(event) {
             name.innerHTML = json.name;
 
             temp.innerHTML =
-                Math.round(json.main.temp * (9 / 5) - 459.67).toFixed(0) + "F";
+                Math.round(json.main.temp * (9 / 5) - 459.67).toFixed(0) + "&deg;F";
             weather.innerHTML = weather.innerHTML = json.weather[0].main;
-            humidity.innerHTML = json.main.humidity + "humidity";
-            windSpeed.innerHTML = json.wind.speed + "windSpeed";
+            humidity.innerHTML = json.main.humidity + "%  humidity";
+            windSpeed.innerHTML = json.wind.speed + "MPH windSpeed";
         });
 
     fetch(forcastUrl)
@@ -56,8 +56,9 @@ btnWeather.onclick = function(event) {
 
                     document.getElementById("temp-" + day).textContent =
                         (forecast.list[i].main.temp * (9 / 5) - 459.67).toFixed(0) + "F";
+
                     document.getElementById("humidity-" + day).textContent =
-                        forecast.list[i].main.humidity + "humidity";
+                        forecast.list[i].main.humidity + "%  humidity";
                     // document.getElementById("weather-" + day).textContent =
                     //     forecast.list[i].main.weather;
                     day++;
