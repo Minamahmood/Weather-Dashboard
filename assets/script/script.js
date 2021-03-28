@@ -11,7 +11,7 @@ const weather = document.getElementById("weather");
 const temp = document.getElementById("temp");
 const humidity = document.getElementById("humidity");
 const windSpeed = document.getElementById("windSpeed");
-
+const weatherIcon = document.querySelector("#weather-icon");
 const dateCont = document.querySelector(".notification");
 
 dateCont.innerHTML = curDate;
@@ -34,7 +34,12 @@ btnWeather.onclick = function(event) {
         .then((json) => {
             const name = document.getElementById("name");
             name.innerHTML = json.name;
+            console.log(json.weather[0].icon);
 
+            weatherIcon.setAttribute(
+                "src",
+                "http://openweathermap.org/img/wn/" + json.weather[0].icon + "@2x.png"
+            );
             temp.innerHTML =
                 Math.round(json.main.temp * (9 / 5) - 459.67).toFixed(0) + "&deg;F";
             weather.innerHTML = weather.innerHTML = json.weather[0].main;
@@ -45,6 +50,7 @@ btnWeather.onclick = function(event) {
     fetch(forcastUrl)
         .then((response) => response.json())
         .then((forecast) => {
+            console.log(forecast);
             var day = 1;
             for (let i = 0; i < forecast.list.length; i++) {
                 // console.log(forecast.list[i].dt_txt.split(" ")[1]);
@@ -53,9 +59,16 @@ btnWeather.onclick = function(event) {
                     document.getElementById(
                         "day-" + day + "-h5"
                     ).textContent = forecast.list[i].dt_txt.split(" ")[0];
-
-                    document.getElementById("temp-" + day).textContent =
-                        (forecast.list[i].main.temp * (9 / 5) - 459.67).toFixed(0) + "F";
+                    document
+                        .querySelector("#weather-icon" + day)
+                        .setAttribute(
+                            "src",
+                            "http://openweathermap.org/img/wn/" +
+                            forecast.list[i].weather[0].icon +
+                            "@2x.png"
+                        ),
+                        (document.getElementById("temp-" + day).textContent =
+                            (forecast.list[i].main.temp * (9 / 5) - 459.67).toFixed(0) + "F");
 
                     document.getElementById("humidity-" + day).textContent =
                         forecast.list[i].main.humidity + "%  humidity";
